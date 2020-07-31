@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/angular.js" defer></script>
+  <script src="angular-locale_de.js" defer></script>
+</head>
+
+<body ng-app>
+  <input type="text" ng-model="amount" placeholder="Enter amount" />
+  <p>Default Currency: {{ amount | currency }}</p>
+  <p>Custom Currency: {{amount | currency: "Euro"}}</p>
+</body>
+
+</html>
