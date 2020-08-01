@@ -1,0 +1,11 @@
+var app = angular.module('MyApp', []);
+
+app.controller('User', function ($scope) {
+  $scope.user = {};
+  $scope.wasSubmitted = false;
+
+  $scope.submit = function () {
+    console.log($scope.user);
+    $scope.wasSubmitted = true;
+  };
+});
