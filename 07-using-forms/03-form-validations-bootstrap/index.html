@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/angular.js" defer></script>
+  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+</head>
+
+<body ng-app="MyApp">
+  <div ng-controller="User">
+    <form name="form" ng-submit="submit()" class="form-horizontal" novalidate>
+
+      <div class="control-group" ng-class="error('firstname')">
+        <label class="control-label" for="firstname">Firstname</label>
+        <div class="controls">
+          <input id="firstname" name="firstname" type="text" ng-model="user.firstname" placeholder="Firstname"
+            required />
+          <span class="help-block" ng-show="form.firstname.$invalid && form.firstname.$dirty">
+            First Name is required
+          </span>
+        </div>
+      </div>
+
+      <div class="control-group" ng-class="error('lastname')">
+        <label class="control-label" for="lastname">Lastname</label>
+        <div class="controls">
+          <input id="lastname" name="lastname" type="text" ng-model="user.lastname" placeholder="Lastname" required />
+          <span class="help-block" ng-show="form.lastname.$invalid && form.lastname.$dirty">
+            Last Name is required
+          </span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <button ng-disabled="form.$invalid" class="btn">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>
